@@ -2,28 +2,153 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8"/>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="icon" type="image/png" href="/favicon.png">
-	<title>Ross Timson</title>
-	<style>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <title>Ross Timson</title>
+    <style>
+     * {
+       box-sizing: border-box;
+       font-family: sans-serif;
+     }
 
-	</style>
+     body {
+       background-color: #f3f3f3;
+       color: #111;
+       line-height: 1.5rem;
+       max-width: 1280px;
+       padding: 1rem;
+       margin: 2.6rem;
+     }
+
+     h1 {
+       font-size: 5rem;
+       font-weight: 700;
+       line-height: 1;
+     }
+
+     h1 > span {
+       display: block;
+       font-size: 2.25rem;
+     }
+
+     h1 > span > sup {
+       font-size: 1.4rem;
+     }
+
+     header > h2 {
+       font-size: 2.25rem;
+       font-weight: 700;
+       margin-top: 0;
+     }
+
+     h2 {
+       font-weight: 400;
+     }
+
+     ul {
+       list-style: none;
+       padding: 0;
+     }
+
+     li, dt {
+       margin-top: 0.6rem;
+     }
+
+     .main-content {
+       border-top: 1px #111 solid;
+       display: flex;
+       flex-wrap: wrap;
+       gap: 1rem;
+       justify-content: space-between;
+       padding: 2rem 0;
+       margin-bottom: 5rem;
+     }
+
+     section {
+       width: 17rem;
+     }
+
+     dd {
+       font-style: italic;
+       margin: 0;
+     }
+
+     footer {
+       font-size: 0.8rem;
+     }
+
+
+     @media screen and (max-width: 380px) {
+       body {
+         margin: 1rem;
+       }
+
+       h1 {
+         font-size: 4.6rem;
+       }
+
+       h1 > span {
+         font-size: 1.5rem;
+       }
+
+       h1 > span > sup {
+         font-size: 1rem;
+       }
+     }
+    </style>
   </head>
   <body>
-	<main>
-	  <header><h1>Ross Timson</h1></header>
-	  <section>
-		<h2>Who</h2>
-	  </section>
-	  <section>
-		<h2>Writing</h2>
-	  </section>
-	  <section>
-		<h2>Elsewhere</h2>
-	  </section>
-	</main>
-	<footer>
-
-	</footer>
+    <main>
+      <header>
+        <h1>Ross Timson
+          <span>Cloudy Sys Admin<sup>*</sup></span>
+        </h1>
+      </header>
+      <div class="main-content">
+        <section>
+          <h2>Who</h2>
+          <p>
+            Cloudy Sys Admin. I keep web apps running. BSD user.
+          </p>
+          <p>
+            I work remotely for <a href="https://www.matillion.com/">Matillion</a>, formerly <a href="https://uk.sageone.com/">Sage Business Cloud</a>.
+          </p>
+        </section>
+        <section>
+          <h2>Projects</h2>
+          <dl>
+            <dt><a href="https://github.com/rosstimson/dotfiles">My dotfiles</a></dt>
+            <dd>Years and years of lovingly crafted Unix configs.</dd>
+          </dl>
+          <footer>See more on <a href="https://github.com/rosstimson/">Github</a></footer>
+        </section>
+        <section>
+          <h2>Writing</h2>
+          <ul>
+            <li><a href="https://hashbangwallop.com/tdd-ansible.html">Test-Driven Ansible with Molecule</a></li>
+          </ul>
+          <ul>
+            <li><a href="https://hashbangwallop.com/backups-borg.html">Backups with Borg and Rsync.net</a></li>
+          </ul>
+          <footer>Subscribe to the <a href="https://hashbangwallop.com/rss.xml">RSS feed</a></footer>
+        </section>
+        <section>
+          <h2>Elsewhere</h2>
+          <ul>
+            <li><a href="https://github.com/rosstimson">Github</a></li>
+            <li><a href="https://twitter.com/rosstimson">Twitter</a></li>
+            <li><a href="https://bsd.network/@rosstimson">Mastodon</a></li>
+            <li><a href="https://keybase.io/rosstimson">Keybase</a></li>
+            <li><a href="https://matrix.to/#/@rosstimson:matrix.org">Matrix</a></li>
+          </ul>
+        </section>
+      </div>
+    </main>
+    <footer>
+      <p><sup>* </sup>Yes, I made this up.</p>
+      <p>
+        PGP Fingerprint: <a href="./pgp.txt">4096R / 4799 AD50 40FF 28FB 5F3D  71D7 667A 3481 E4BB 34F3</a>
+      </p>
+    </footer>
   </body>
 </html>
