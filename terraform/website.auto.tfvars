@@ -1,0 +1,6 @@
+region = "eu-west-2"
+profile = "rosstimson"
+domain = "rosstimson.com"
+domain_alias = "www.rosstimson.com"
+acm_certificate_arn = "arn:aws:acm:us-east-1:689142454036:certificate/47ff325f-b825-494c-81b4-436554b70fef"
+route53_zone_id = "Z1V4ZC38ZKO2PI"
