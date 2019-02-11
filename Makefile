@@ -1,4 +1,4 @@
-.PHONY: all upload invalidate-cache
+.PHONY: all upload invalidate-cache pretty
 
 AWS_PROFILE='rosstimson'
 CDN_DISTRIBUTION_ID='E3NS8SR0N7DMOZ'
@@ -12,3 +12,7 @@ invalidate-cache:
 	aws --profile ${AWS_PROFILE} cloudfront create-invalidation \
 		--distribution-id ${CDN_DISTRIBUTION_ID} --paths "/*"
 
+pretty:
+	prettier --html-whitespace-sensitivity ignore \
+		--parser html \
+		--write site/index.html
