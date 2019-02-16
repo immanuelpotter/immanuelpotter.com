@@ -1,8 +1,9 @@
-# rosstimson.com
+# immanuelpotter.com
 
+## Forked from https://github.com/rosstimson/rosstimson.com
 [rosstimson.com](https://rosstimson.com/)
 
-My personal website that links to my other places on the web.
+Personal blog website.
 
 ## Deploy
 
@@ -11,7 +12,7 @@ My personal website that links to my other places on the web.
 The Terraform assumes that a couple of AWS resources have been
 pre-created and needs their IDs set as a variable:
 
-* Route 53 hosted domain, in my case this is rosstimson.com
+* Route 53 hosted domain
 * TLS certificate managed by ACM.
 
 ### AWS Infrastructure
@@ -43,3 +44,5 @@ changes take effect immediately.
 The Terraform has been largely taken from
 https://github.com/ringods/terraform-website-s3-cloudfront-route53
 with slight modifications to simplify it for my needs.
+
+Again, forked from https://github.com/rosstimson/rosstimson.com
