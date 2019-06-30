@@ -26,3 +26,7 @@ variable "bundle_id" {
 variable "key_pair_name" {
   description = "SSH Keyname to use"
 }
+
+variable "hosted_zone" {
+  description = "Pre-made Hosted Zone"
+}

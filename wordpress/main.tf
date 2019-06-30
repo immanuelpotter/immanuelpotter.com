@@ -31,6 +31,22 @@ resource "aws_lightsail_static_ip_attachment" "static_ip_attachment" {
   instance_name  = "${aws_lightsail_instance.wordpress.name}"
 }
 
+resource "aws_route53_record" "wordpress" {
+  zone_id = "${var.hosted_zone}"
+  name    = "immanuelpotter.com"
+  type    = "A"
+  ttl     = "300"
+  records = ["${aws_lightsail_static_ip.wordpress_static_ip.ip_address}"]
+}
+
+resource "aws_route53_record" "wordpress_cname" {
+  zone_id = "${var.hosted_zone}"
+  name    = "www.immanuelpotter.com"
+  type    = "CNAME"
+  ttl     = "300"
+  records = ["${aws_route53_record.wordpress.name}"]
+}
+
 output "public_ip" {
   value = "${aws_lightsail_static_ip.wordpress_static_ip.ip_address}"
 }
