@@ -1,7 +1,7 @@
 .PHONY: all upload invalidate-cache pretty
 
-AWS_PROFILE='rosstimson'
-CDN_DISTRIBUTION_ID='E3NS8SR0N7DMOZ'
+AWS_PROFILE='manny'
+CDN_DISTRIBUTION_ID=''
 
 all: upload invalidate-cache
 

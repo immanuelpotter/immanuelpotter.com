@@ -12,8 +12,8 @@ provider "aws" {
 
 data "template_file" "bucket_policy" {
   template = "${file("${path.module}/website_bucket_policy.json")}"
-
-  vars {
+  
+  vars = {
     bucket = "${var.domain}"
     secret = "${var.duplicate_content_penalty_secret}"
   }
@@ -41,7 +41,7 @@ resource "aws_cloudfront_distribution" "website_cdn" {
   enabled     = true
   price_class = "${var.cloudfront_price_class}"
 
-  "origin" {
+  origin {
     origin_id   = "origin-bucket-${aws_s3_bucket.website_bucket.id}"
     domain_name = "${aws_s3_bucket.website_bucket.website_endpoint}"
 
@@ -60,11 +60,11 @@ resource "aws_cloudfront_distribution" "website_cdn" {
 
   default_root_object = "index.html"
 
-  "default_cache_behavior" {
+   default_cache_behavior  {
     allowed_methods = ["GET", "HEAD"]
     cached_methods  = ["GET", "HEAD"]
 
-    "forwarded_values" {
+     forwarded_values  {
       query_string = "${var.forward_query_string}"
 
       cookies {
@@ -79,13 +79,13 @@ resource "aws_cloudfront_distribution" "website_cdn" {
     compress               = true
   }
 
-  "restrictions" {
-    "geo_restriction" {
+   restrictions  {
+     geo_restriction  {
       restriction_type = "none"
     }
   }
 
-  "viewer_certificate" {
+   viewer_certificate  {
     acm_certificate_arn      = "${var.acm_certificate_arn}"
     ssl_support_method       = "sni-only"
     minimum_protocol_version = "TLSv1.2_2018"
