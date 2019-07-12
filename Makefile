@@ -6,7 +6,7 @@ CDN_DISTRIBUTION_ID=''
 all: upload invalidate-cache
 
 upload:
-	aws --profile ${AWS_PROFILE} s3 sync site/immanuelpotter.com/public s3://immanuelpotter.com/
+	aws --profile ${AWS_PROFILE} s3 sync site/immanuelpotter/public s3://immanuelpotter.com/
 
 invalidate-cache:
 	aws --profile ${AWS_PROFILE} cloudfront create-invalidation \
