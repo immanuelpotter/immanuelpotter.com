@@ -5,15 +5,13 @@
 
 Personal blog website.
 
-## Deploy
-
 ### Pre-requisites
 
 The Terraform assumes that a couple of AWS resources have been
 pre-created and needs their IDs set as a variable:
 
 * Route 53 hosted domain
-* TLS certificate managed by ACM.
+* TLS certificate managed by ACM. Worth mentioning, to be used by CloudFront, the certificate needs requesting from Virginia (us-east-1); regardless of where you're creating the rest of your infra.
 
 ### AWS Infrastructure
 
@@ -23,6 +21,7 @@ Provision all the AWS infrastructure needed with:
 
 *Note:* The duplicate_content_penalty_secret is just a random string
 so here I am using `pwgen` to create a 32 char string.
+Running the apply without passing this var will prompt for a string.
 
 ### Uploading Site
 
@@ -36,13 +35,10 @@ following tasks:
 `invalidate-cache` - Invalidates all files in Cloudfront to make
 changes take effect immediately.
 
-`pretty` - Uses [Prettier](https://prettier.io/) to tidy us the HTML,
-*note* this writes in-place.
-
 ## Credit
 
 The Terraform has been largely taken from
 https://github.com/ringods/terraform-website-s3-cloudfront-route53
 with slight modifications to simplify it for my needs.
 
-Again, forked from https://github.com/rosstimson/rosstimson.com
+Again, slight modifications have been added as this is largely a fork from https://github.com/rosstimson/rosstimson.com - you can use this yourself by changing variables defined in `terraform/website.tf.autovars`.
