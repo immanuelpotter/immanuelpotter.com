@@ -1,4 +1,4 @@
-acm_certificate_arn = "arn:aws:acm:us-east-1:777867517050:certificate/c8821bb7-c83b-4e8a-9f22-96559408e0af"
+acm_certificate_arn = "arn:aws:acm:us-east-1:777867517050:certificate/794724a7-c1d3-431c-9e8d-0222e4c1f5c2"
 cloudfront_price_class = "PriceClass_All"
 domain = "immanuelpotter.com"
 domain_alias = "www.immanuelpotter.com"
