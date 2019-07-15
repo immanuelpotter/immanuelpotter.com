@@ -1,9 +1,12 @@
 .PHONY: all upload invalidate-cache
 
 AWS_PROFILE='manny'
-CDN_DISTRIBUTION_ID=''
+CDN_DISTRIBUTION_ID='EUWT04TE141O4'
 
-all: upload invalidate-cache
+all: build upload invalidate-cache
+
+build:
+	cd site/immanuelpotter/ && hugo && cd -
 
 upload:
 	aws --profile ${AWS_PROFILE} s3 sync site/immanuelpotter/public s3://immanuelpotter.com/
