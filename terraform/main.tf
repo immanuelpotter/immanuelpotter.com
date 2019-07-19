@@ -89,9 +89,10 @@ resource "aws_cloudfront_distribution" "website_cdn" {
     acm_certificate_arn      = "${var.acm_certificate_arn}"
     ssl_support_method       = "sni-only"
     minimum_protocol_version = "TLSv1.2_2018"
+    cloudfront_default_certificate = true
   }
 
-  aliases = ["${var.domain}", "${var.domain_alias}"]
+#  aliases = ["${var.domain}", "${var.domain_alias}"]
 
   tags = {
     Name      = "${var.domain} Website CDN"
