@@ -92,7 +92,7 @@ resource "aws_cloudfront_distribution" "website_cdn" {
     cloudfront_default_certificate = true
   }
 
-#  aliases = ["${var.domain}", "${var.domain_alias}"]
+  aliases = ["${var.domain}", "${var.domain_alias}"]
 
   tags = {
     Name      = "${var.domain} Website CDN"
