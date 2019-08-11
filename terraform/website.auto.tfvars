@@ -24,4 +24,4 @@ route53_zone_id = "Z2PHX3TM45XI38"
 #
 # Lambda
 #
-lambda_edge_function_arn = "arn:aws:lambda:us-east-1:777867517050:function:lambda-edge-header-add-HeaderAddFunction-15UEOJSMTVJ0B:6"
+lambda_edge_function_arn = "arn:aws:lambda:us-east-1:777867517050:function:lambda-edge-header-add-HeaderAddFunction-15UEOJSMTVJ0B:7"

@@ -12,6 +12,7 @@ pre-created and needs their IDs set as a variable:
 
 * Route 53 hosted domain
 * TLS certificate managed by ACM. Worth mentioning, to be used by CloudFront, the certificate needs requesting from Virginia (us-east-1); regardless of where you're creating the rest of your infra.
+* Lambda@Edge function already created in us-east-1 - I'm using [this](https://github.com/immanuelpotter/lambda-edge-header-adder) for extra security
 
 ### AWS Infrastructure
 
