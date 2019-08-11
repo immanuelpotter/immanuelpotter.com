@@ -64,7 +64,14 @@ resource "aws_cloudfront_distribution" "website_cdn" {
     allowed_methods = ["GET", "HEAD"]
     cached_methods  = ["GET", "HEAD"]
 
-     forwarded_values  {
+
+    lambda_function_association {
+      event_type   = "origin-response"
+      lambda_arn   = "${var.lambda_edge_function_arn}"
+      include_body = false
+    }
+
+    forwarded_values  {
       query_string = "${var.forward_query_string}"
 
       cookies {
@@ -81,8 +88,8 @@ resource "aws_cloudfront_distribution" "website_cdn" {
 
    restrictions  {
      geo_restriction  {
-      restriction_type = "none"
-    }
+       restriction_type = "none"
+     }
   }
 
    viewer_certificate  {

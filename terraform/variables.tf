@@ -37,6 +37,10 @@ variable "acm_certificate_arn" {
   description = "ARN of TLS certificate in ACM."
 }
 
+variable "lambda_edge_function_arn" {
+  description = "ARN of Lambda@Edge function to rig up to CloudFront."
+}
+
 variable "route53_zone_id" {
   description = "The Route53 Zone ID where the DNS entries must be created."
 }
